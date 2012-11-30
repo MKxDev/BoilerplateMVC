@@ -1,8 +1,8 @@
 ﻿using NHibernate;
-using NHibernateBase.Data.NHibernate;
+using ServiceBase.Data.NHibernate;
 using StructureMap.Configuration.DSL;
 
-namespace NHibernateBase.IoC
+namespace ServiceBase.IoC
 {
     public class NHibernateRegistry : Registry
     {
