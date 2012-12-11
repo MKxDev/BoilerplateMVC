@@ -2,7 +2,7 @@
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 
-namespace ServiceBase.Data.NHibernate
+namespace RepositoryBase.NHibernate
 {
     public class FluentConfiguration
     {

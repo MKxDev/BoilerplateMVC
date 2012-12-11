@@ -1,5 +1,5 @@
 ﻿using NHibernate;
-using ServiceBase.Data.NHibernate;
+using RepositoryBase.NHibernate;
 using StructureMap.Configuration.DSL;
 
 namespace ServiceBase.IoC
