@@ -107,12 +107,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrapper\WebBoostrapper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IoC\BaseControllerFactory.cs" />
-    <Compile Include="IoC\BaseWebRegistry.cs" />
+    <Compile Include="IoC\WebRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RepositoryBase\RepositoryBase.csproj">
+      <Project>{f810945a-0ef1-4d0b-aaf8-ec0bc9bbee84}</Project>
+      <Name>RepositoryBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceBase\ServiceBase.csproj">
+      <Project>{58e56217-e3f3-4e19-8eb2-7de375e5ac11}</Project>
+      <Name>ServiceBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

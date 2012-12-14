@@ -4,9 +4,9 @@ using StructureMap.Configuration.DSL;
 
 namespace WebBaseBootstrap.IoC
 {
-    public class BaseWebRegistry : Registry
+    public class WebRegistry : Registry
     {
-        public BaseWebRegistry()
+        public WebRegistry()
         {
             ObjectFactory.Initialize(x =>
             {
