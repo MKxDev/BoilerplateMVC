@@ -13,6 +13,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2D03F434
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryTests", "RepositoryTests\RepositoryTests.csproj", "{69DD9CF7-5A32-496D-B4AB-C4B6E76C7C26}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{744B94E8-1524-406F-9663-014491774EF1}"
+	ProjectSection(SolutionItems) = preProject
+		Config\Application.config = Config\Application.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{EE96DD00-4671-488E-A0C2-9C237375E0FF}"
+	ProjectSection(SolutionItems) = preProject
+		Data\Northwind.sl3 = Data\Northwind.sl3
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,6 +1,9 @@
 ﻿using NHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
+using RepositoryBase.NHibernate.Mappings;
+using RepositoryBase.Models;
+using System.Data.SQLite;
 
 namespace RepositoryBase.NHibernate
 {
@@ -9,12 +12,12 @@ namespace RepositoryBase.NHibernate
         public static ISessionFactory CreateSessionFactory()
         {
             return Fluently.Configure()
-                    .Database(PostgreSQLConfiguration // TODO: Change flavor here!
+                    .Database(SQLiteConfiguration
                         .Standard
-                        .ConnectionString(c => c.FromAppSetting("YOUR_CONNECTION_STRING_ELEMENT"))
+                        .ConnectionString(c => c.FromAppSetting("applicationConnectionString"))
                     )
                     .Mappings(m => {
-                        // m.FluentMappings.AddFromAssemblyOf<>() // TODO: Add your mappings
+                        m.FluentMappings.AddFromAssemblyOf<BaseModelMap<BaseModel>>();
                     })
                     .BuildSessionFactory();
         }
