@@ -1,17 +1,23 @@
 ﻿@{
-    Layout = null;
+    Bundles.Reference("/Assets/bootstrap/bootstrap.less");
+    Bundles.Reference("/Assets/bootstrap/responsive.less");
+    Bundles.Reference("/Assets/less");
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>_Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boilerplate MVC</title>
+    @Bundles.RenderStylesheets()
 </head>
 <body>
-    <div>
+    @Html.Partial("_Navbar")
+    <div class="container">
         @RenderBody()
+    </div>
+    <div class="scripts">
+        @Bundles.RenderScripts()
     </div>
 </body>
 </html>
