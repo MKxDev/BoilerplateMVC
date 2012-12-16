@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBase", "ServiceBase\ServiceBase.csproj", "{58E56217-E3F3-4E19-8EB2-7DE375E5AC11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBase", "WebBase\WebBase.csproj", "{056EB713-9A1F-439B-ACF9-059B9153CFCE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBaseBootstrap", "WebBaseBootstrap\WebBaseBootstrap.csproj", "{9D31B815-89B1-4545-A9BA-F5B2ED2534CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryBase", "RepositoryBase\RepositoryBase.csproj", "{F810945A-0EF1-4D0B-AAF8-EC0BC9BBEE84}"
@@ -34,10 +32,6 @@ Global
 		{58E56217-E3F3-4E19-8EB2-7DE375E5AC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E56217-E3F3-4E19-8EB2-7DE375E5AC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E56217-E3F3-4E19-8EB2-7DE375E5AC11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{056EB713-9A1F-439B-ACF9-059B9153CFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{056EB713-9A1F-439B-ACF9-059B9153CFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{056EB713-9A1F-439B-ACF9-059B9153CFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{056EB713-9A1F-439B-ACF9-059B9153CFCE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D31B815-89B1-4545-A9BA-F5B2ED2534CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D31B815-89B1-4545-A9BA-F5B2ED2534CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D31B815-89B1-4545-A9BA-F5B2ED2534CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
