@@ -19,7 +19,11 @@ namespace RepositoryBase.Repositories
 
         public virtual T Save<T>(T model) where T : BaseModel
         {
-            return _session.Save(model) as T;
+            var user = _session.Save(model) as T;
+
+            _session.Flush();
+
+            return user;
         }
 
         public virtual T GetById<T>(Guid id) where T : BaseModel
