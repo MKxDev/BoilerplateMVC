@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2D03F434-8459-4558-8D70-92406A0DCB0E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryTests", "RepositoryTests\RepositoryTests.csproj", "{69DD9CF7-5A32-496D-B4AB-C4B6E76C7C26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F810945A-0EF1-4D0B-AAF8-EC0BC9BBEE84} = {F810945A-0EF1-4D0B-AAF8-EC0BC9BBEE84}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{744B94E8-1524-406F-9663-014491774EF1}"
 	ProjectSection(SolutionItems) = preProject

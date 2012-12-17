@@ -13,19 +13,22 @@ namespace RepositoryBase.NHibernate
     {
         public static ISessionFactory CreateSessionFactory()
         {
-            var config = GetPgConfig();
+            //var config = GetPgConfig();
+            var config = GetSqliteConfig();
+
+            var sessionFactory = config.BuildSessionFactory();
 
             // Execute update
-            // TODO: Make this optional
+            // TODO: Make this optional - check for a flag or something
             var schemaUpdate = new SchemaUpdate(config);
             schemaUpdate.Execute(false, true);
 
-            return config.BuildSessionFactory();
+            return sessionFactory;
         }
 
         public static Configuration GetSqliteConfig()
         {
-            return Fluently.Configure()
+            var config = Fluently.Configure()
                 .Database(SQLiteConfiguration
                     .Standard
                     .ConnectionString(c => c.FromAppSetting("boilerplaceSqliteConnectionString")))
@@ -33,7 +36,14 @@ namespace RepositoryBase.NHibernate
                 {
                     m.FluentMappings.AddFromAssemblyOf<BaseModelMap<BaseModel>>();
                 })
+                .ExposeConfiguration(cfg =>
+                {
+                    cfg.SetProperty("current_session_context_class", "call");
+                    cfg.SetProperty("connection.release_mode", "on_close");
+                })
                 .BuildConfiguration();
+
+            return config;
         }
 
         public static Configuration GetPgConfig()
