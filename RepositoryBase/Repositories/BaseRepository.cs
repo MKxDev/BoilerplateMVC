@@ -13,7 +13,7 @@ namespace RepositoryBase.Repositories
 {
     public abstract class BaseRepository : IBaseRepository
     {
-        private ISession _session;
+        protected ISession _session;
 
         protected BaseRepository(ISession session) { _session = session; }
 

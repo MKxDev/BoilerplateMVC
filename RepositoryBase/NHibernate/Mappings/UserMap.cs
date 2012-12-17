@@ -8,7 +8,7 @@ namespace RepositoryBase.NHibernate.Mappings
         {
             Table("Users");
 
-            Map(x => x.UserName);
+            Map(x => x.Email);
             Map(x => x.Salt);
             Map(x => x.Hash);
         }

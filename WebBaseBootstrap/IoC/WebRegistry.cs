@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using StructureMap;
 using StructureMap.Configuration.DSL;
+using WebBaseBootstrap.Services.Interfaces;
 
 namespace WebBaseBootstrap.IoC
 {
@@ -8,6 +9,11 @@ namespace WebBaseBootstrap.IoC
     {
         public WebRegistry()
         {
+            Scan(x =>
+            {
+                x.AddAllTypesOf<IBaseWebService>();
+            });
+
             ObjectFactory.Initialize(x =>
             {
                 x.SetAllProperties(p =>

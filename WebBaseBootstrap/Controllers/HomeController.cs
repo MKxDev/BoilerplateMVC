@@ -8,7 +8,7 @@ using StructureMap;
 
 namespace WebBaseBootstrap.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public UserService UserService { get; set; }
 
