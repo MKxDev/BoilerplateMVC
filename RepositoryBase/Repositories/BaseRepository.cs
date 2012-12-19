@@ -17,13 +17,18 @@ namespace RepositoryBase.Repositories
 
         protected BaseRepository(ISession session) { _session = session; }
 
-        public virtual T Save<T>(T model) where T : BaseModel
+        public virtual void Save<T>(T model) where T : BaseModel
         {
-            var user = _session.Save(model) as T;
+            if (model.Id == Guid.Empty)
+            {
+                model.CreatedDate = DateTime.UtcNow;
+            }
+
+            model.ModifiedDate = DateTime.UtcNow;
+
+            _session.Save(model);
 
             _session.Flush();
-
-            return user;
         }
 
         public virtual T GetById<T>(Guid id) where T : BaseModel

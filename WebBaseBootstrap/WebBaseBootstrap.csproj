@@ -139,6 +139,7 @@
   <ItemGroup>
     <Compile Include="Bootstrapper\WebBoostrapper.cs" />
     <Compile Include="Bootstrapper\CassetteConfiguration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -344,7 +345,11 @@
   <ItemGroup>
     <Content Include="..\Data\BoilerplaceMVC.sl3">
       <Link>App_Data\BoilerplaceMVC.sl3</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

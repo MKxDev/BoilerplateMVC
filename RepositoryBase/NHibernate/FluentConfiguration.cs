@@ -13,8 +13,8 @@ namespace RepositoryBase.NHibernate
     {
         public static ISessionFactory CreateSessionFactory()
         {
-            //var config = GetPgConfig();
-            var config = GetSqliteConfig();
+            var config = GetPgConfig();
+            //var config = GetSqliteConfig();
 
             var sessionFactory = config.BuildSessionFactory();
 

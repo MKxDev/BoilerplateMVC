@@ -7,7 +7,7 @@ namespace RepositoryBase.NHibernate.Mappings
     {
         public BaseModelMap()
         {
-            Id(x => x.Id).GeneratedBy.Guid();
+            Id(x => x.Id).Unique().GeneratedBy.Guid();
             Map(x => x.CreatedDate);
             Map(x => x.ModifiedDate);
         }

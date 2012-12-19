@@ -18,9 +18,9 @@ namespace ServiceBase.Services
             _repository = repository;
         }
 
-        public virtual T Save<T>(T model) where T : BaseModel
+        public virtual void Save<T>(T model) where T : BaseModel
         {
-            return _repository.Save(model);
+            _repository.Save(model);
         }
 
         public virtual T GetById<T>(Guid id) where T : BaseModel

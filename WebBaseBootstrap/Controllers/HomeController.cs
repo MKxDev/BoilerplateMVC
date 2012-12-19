@@ -17,18 +17,17 @@ namespace WebBaseBootstrap.Controllers
 
         public ActionResult Index()
         {
-            // DEBUG
-            System.Diagnostics.Debug.WriteLine("User service: " + UserService.ToString());
 
-            // For shits and giggles:
-            var user = new User
+            if (HttpContext.User.Identity.IsAuthenticated)
             {
-                Email = "tes@asdfsafsadfsafagtest.com",
-                Salt = "1234",
-                Hash="hashish",
-            };
-
-            UserService.Save(user);
+                // DEBUG
+                System.Diagnostics.Debug.WriteLine("Congrats, you're authed!");
+            }
+            else
+            {
+                // DEBUG
+                System.Diagnostics.Debug.WriteLine("Oops, you need to login!");
+            }
 
             return View();
         }

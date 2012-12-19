@@ -166,10 +166,9 @@ namespace WebBaseBootstrap.Services
             // return userService.GetUserNameByEmail(email);
         }
 
-        public override bool ValidateUser(string username, string password)
+        public override bool ValidateUser(string email, string password)
         {
-            throw new NotImplementedException();
-            // return userService.ValidateUser(username, password);
+            return _userService.ValidateUser(email, password);
         }
 
         public override bool ChangePassword(string username, string oldPassword, string newPassword)
