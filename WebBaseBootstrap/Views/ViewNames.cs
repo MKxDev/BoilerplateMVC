@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 
-namespace WebBaseBootstrap.Controllers
+namespace WebBaseBootstrap.Views
 {
-    public class BaseController : Controller
+    public static class ViewNames
     {
+        // Common
         public const string Index = "Index";
     }
 }

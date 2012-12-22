@@ -1,8 +1,79 @@
-﻿@using (Html.BeginForm("Login", "Account", FormMethod.Post))
-{
-    @Html.TextBox("Email")
+﻿@using WebBaseBootstrap.Controllers;
 
-    @Html.Password("Password")
+<div class="row-fluid">
+    <div class="span6">
+        <h3>Login</h3>
 
-    <input type="submit" value="Save" />
-}
+        @using (Html.BeginHorizontalForm())
+        {   
+            <div class="control-group">
+                @Html.ControlLabel("Email")
+
+                <div class="controls">
+                    @Html.TextBox("Email", null, new { placeholder = "Email" })
+                </div>
+            </div>
+            
+            <div class="control-group">
+                @Html.ControlLabel("Password")
+                <div class="controls">
+                    @Html.Password("Password", null, new { placeholder = "Password" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <input type="checkbox" name="RememberMe" /> Remember Me
+                    </label>
+                    
+                    <button type="submit" class="btn">Login</button>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="span6">
+        <h3>Register</h3>
+        @using (Html.BeginHorizontalForm())
+        {
+            <div class="control-group">
+                @Html.ControlLabel("Email")
+                
+                <div class="controls">
+                    @Html.TextBox("Email", null, new { placeholder = "Email" })
+                </div>
+            </div>
+            
+            <div class="control-group">
+                @Html.ControlLabel("Email Again")
+                
+                <div class="controls">
+                    @Html.TextBox("Email2", null, new { placeholder = "Email Again" })
+                </div>
+            </div>
+            
+            <div class="control-group">
+                @Html.ControlLabel("Password")
+                
+                <div class="controls">
+                    @Html.Password("Password", null, new { placeholder = "Password" })
+                </div>
+            </div>
+            
+            <div class="control-group">
+                @Html.ControlLabel("Password Again")
+                
+                <div class="controls">
+                    @Html.Password("Password2", null, new { placeholder = "Password Again" })
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn">Register</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

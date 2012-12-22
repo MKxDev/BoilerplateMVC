@@ -10,6 +10,11 @@ namespace WebBaseBootstrap.Controllers
 {
     public class AccountController : BaseController
     {
+        public const string Name = "Account";
+        public const string LoginAction = "Login";
+        public const string LogoutAction = "Logout";
+        public const string RegisterAction = "Register";
+
         public MembershipService MembershipService { get; set; }
 
         [AcceptVerbs(HttpVerbs.Get)]
@@ -23,7 +28,7 @@ namespace WebBaseBootstrap.Controllers
         {
             if (MembershipService.ValidateUser(email, password))
             {
-                FormsAuthentication.SetAuthCookie(email, rememberMe);
+                // FormsAuthentication.SetAuthCookie(email, rememberMe);
 
                 return Redirect("/");
             }

@@ -11,6 +11,8 @@ namespace WebBaseBootstrap.Controllers
 {
     public class HomeController : BaseController
     {
+        public const string Name = "Home";
+
         public UserService UserService { get; set; }
 
         // GET: /Home/
