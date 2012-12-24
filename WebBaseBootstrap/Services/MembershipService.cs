@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Security;
+using StructureMap;
 using WebBaseBootstrap.Services.Interfaces;
 using ServiceBase.Services;
+using ServiceBase.Common.Exceptions;
 
 namespace WebBaseBootstrap.Services
 {
@@ -23,6 +22,12 @@ namespace WebBaseBootstrap.Services
         private string passwordStrengthRegularExpression;
         private MembershipPasswordFormat passwordFormat = MembershipPasswordFormat.Hashed;
         private UserService _userService;
+        
+        // This constructer is needed by ASP.NET
+        public MembershipService()
+        {
+            _userService = ObjectFactory.GetInstance<UserService>();
+        }
 
         public MembershipService(UserService userService)
         {
@@ -87,6 +92,11 @@ namespace WebBaseBootstrap.Services
             get { return requiresUniqueEmail; }
         }
 
+        public string ProviderName
+        {
+            get { return "BoilerplateMembershipProvider"; }
+        }
+
         #endregion
 
 
@@ -96,8 +106,8 @@ namespace WebBaseBootstrap.Services
         {
             if (config == null) throw new ArgumentNullException("config");
 
-            if (name == null || name.Length == 0) name = "CustomMembershipProvider";
-
+            if (name == null || name.Length == 0) name = ProviderName;
+            
             if (String.IsNullOrEmpty(config["description"]))
             {
                 config.Remove("description");
@@ -130,7 +140,7 @@ namespace WebBaseBootstrap.Services
                 return null;
             }
 
-            if (RequiresUniqueEmail && GetUserNameByEmail(email) != "")
+            if (RequiresUniqueEmail && !String.IsNullOrWhiteSpace(GetUserNameByEmail(email)))
             {
                 status = MembershipCreateStatus.DuplicateEmail;
                 return null;
@@ -140,11 +150,19 @@ namespace WebBaseBootstrap.Services
 
             if (u == null)
             {
-                // TODO: Implement
-                // _userService.CreateUser(username, password, email);
-                status = MembershipCreateStatus.Success;
+                try
+                {
+                    _userService.CreateUser(username, password);
+                    status = MembershipCreateStatus.Success;
 
-                return GetUser(username, false);
+                    return GetUser(username, false);
+                }
+                catch (UserAlreadyExistsException)
+                {
+                    status = MembershipCreateStatus.DuplicateEmail;
+
+                    return null;
+                }
             }
             else
             {
@@ -154,16 +172,25 @@ namespace WebBaseBootstrap.Services
             return null;
         }
 
-        public override MembershipUser GetUser(string username, bool userIsOnline)
+        public override MembershipUser GetUser(string email, bool userIsOnline)
         {
-            throw new NotImplementedException();
-            // return userService.GetUser(username);
+            var user = _userService.GetUserByEmail(email);
+
+            if (user != null)
+            {
+                var membershipUser = new MembershipUser(ProviderName, email, null, email, "", "", true,
+                                                        false, user.CreatedDate, DateTime.UtcNow, DateTime.UtcNow,
+                                                        DateTime.MinValue, DateTime.MinValue);
+
+                return membershipUser;
+            }
+
+            return null;
         }
 
         public override string GetUserNameByEmail(string email)
         {
-            throw new NotImplementedException();
-            // return userService.GetUserNameByEmail(email);
+            return _userService.GetUserNameByEmail(email);
         }
 
         public override bool ValidateUser(string email, string password)

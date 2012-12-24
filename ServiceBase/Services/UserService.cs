@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RepositoryBase.Repositories;
 using RepositoryBase.Models;
-using ServiceBase.Common.Utilities;
 using ServiceBase.Common.Exceptions;
 
 namespace ServiceBase.Services
@@ -63,6 +58,11 @@ namespace ServiceBase.Services
         public virtual User GetUserByEmail(string email)
         {
             return _userRepository.GetUserByEmail(email);
+        }
+
+        public virtual string GetUserNameByEmail(string email)
+        {
+            return _userRepository.GetUserNameByEmail(email);
         }
     }
 }

@@ -1,0 +1,29 @@
+﻿@if (!HttpContext.Current.User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm(AccountController.LoginAction, AccountController.Name, FormMethod.Post, new {@class = "navbar-form pull-right"}))
+    {
+        @Html.TextBox("Email", null, new {placeholder = "Email", @class = "input-small" })
+        @Html.Password("Password", null, new { placeholder = "Password", @class = "input-small" })
+
+        <label class="checkbox">
+            <input type="checkbox" name="RememberMe" /> Remember Me
+        </label>
+        <button type="submit" class="btn">Login</button>
+    }
+}
+else
+{
+    <div>
+        <ul class="nav pull-right">
+            <li class="dropdown">
+                <a href="javascript:// @HttpContext.Current.User.Identity.Name">
+                    @HttpContext.Current.User.Identity.Name
+                </a>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+                @Html.ActionLink("Logout", AccountController.LogoutAction, AccountController.Name)
+            </li>
+        </ul>
+    </div>
+}

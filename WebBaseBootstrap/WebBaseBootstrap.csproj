@@ -42,9 +42,6 @@
     <Reference Include="AjaxMin">
       <HintPath>..\packages\AjaxMin.4.60.4609.17023\lib\net20\AjaxMin.dll</HintPath>
     </Reference>
-    <Reference Include="Bootstrap.Mvc">
-      <HintPath>..\Libs\Bootstrap.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="Cassette">
       <HintPath>..\packages\Cassette.2.0.0\lib\net40-client\Cassette.dll</HintPath>
     </Reference>
@@ -341,7 +338,7 @@
     <Content Include="Assets\bootstrap\accordion.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Shared\Partial\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\less\main.less" />
@@ -357,6 +354,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partial\_Userbar.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -374,7 +374,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>22428</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:3483/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

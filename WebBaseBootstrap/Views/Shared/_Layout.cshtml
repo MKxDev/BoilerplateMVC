@@ -11,13 +11,13 @@
     <title>Boilerplate MVC</title>
     @Bundles.RenderStylesheets()
 </head>
-<body>
-    @Html.Partial("_Navbar")
-    <div class="container">
-        @RenderBody()
-    </div>
-    <div class="scripts">
-        @Bundles.RenderScripts()
-    </div>
-</body>
+    <body>
+        @{ Html.RenderPartial(ViewNames.NavbarPartial); }
+        <div class="container">
+            @RenderBody()
+        </div>
+        <div class="scripts">
+            @Bundles.RenderScripts()
+        </div>
+    </body>
 </html>

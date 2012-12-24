@@ -9,5 +9,9 @@ namespace WebBaseBootstrap.Views
     {
         // Common
         public const string Index = "Index";
+        
+        // Common partials
+        public const string NavbarPartial = "Partial/_Navbar";
+        public const string UserbarPartial = "Partial/_Userbar";
     }
 }

@@ -17,10 +17,18 @@ namespace RepositoryBase.Repositories
 
         public User GetUserByEmail(string email)
         {
-            return _session
-                .Query<User>()
-                .WithEmail(email)
-                .FirstOrDefault();
+            return _session.Query<User>()
+                           .WithEmail(email)
+                           .FirstOrDefault();
+        }
+
+
+        public string GetUserNameByEmail(string email)
+        {
+            return _session.Query<User>()
+                           .WithEmail(email)
+                           .Select(u => u.Email)
+                           .FirstOrDefault();
         }
     }
 }

@@ -1,13 +1,13 @@
 ﻿@using WebBaseBootstrap.Controllers;
 
 <div class="row-fluid">
-    <div class="span6">
+    <div class="span6 well">
         <h3>Login</h3>
 
-        @using (Html.BeginHorizontalForm())
+        @using (Html.BeginForm(AccountController.LoginAction, AccountController.Name, FormMethod.Post, new { @class = "form-horizontal" }))
         {   
             <div class="control-group">
-                @Html.ControlLabel("Email")
+                @Html.Label("Enail", new { @class = "control-label" })
 
                 <div class="controls">
                     @Html.TextBox("Email", null, new { placeholder = "Email" })
@@ -15,7 +15,7 @@
             </div>
             
             <div class="control-group">
-                @Html.ControlLabel("Password")
+                @Html.Label("Password", new { @class = "control-label" })
                 <div class="controls">
                     @Html.Password("Password", null, new { placeholder = "Password" })
                 </div>
@@ -33,12 +33,12 @@
         }
     </div>
 
-    <div class="span6">
+    <div class="span6 well">
         <h3>Register</h3>
-        @using (Html.BeginHorizontalForm())
+        @using (Html.BeginForm(AccountController.RegisterAction, AccountController.Name, FormMethod.Post, new { @class = "form-horizontal" }))
         {
             <div class="control-group">
-                @Html.ControlLabel("Email")
+                @Html.Label("Enail", new { @class = "control-label" })
                 
                 <div class="controls">
                     @Html.TextBox("Email", null, new { placeholder = "Email" })
@@ -46,7 +46,7 @@
             </div>
             
             <div class="control-group">
-                @Html.ControlLabel("Email Again")
+                @Html.Label("Enail Again", new { @class = "control-label" })
                 
                 <div class="controls">
                     @Html.TextBox("Email2", null, new { placeholder = "Email Again" })
@@ -54,7 +54,7 @@
             </div>
             
             <div class="control-group">
-                @Html.ControlLabel("Password")
+                @Html.Label("Password", new { @class = "control-label" })
                 
                 <div class="controls">
                     @Html.Password("Password", null, new { placeholder = "Password" })
@@ -62,7 +62,7 @@
             </div>
             
             <div class="control-group">
-                @Html.ControlLabel("Password Again")
+                @Html.Label("Password Again", new { @class = "control-label" }) 
                 
                 <div class="controls">
                     @Html.Password("Password2", null, new { placeholder = "Password Again" })

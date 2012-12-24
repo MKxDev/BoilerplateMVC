@@ -9,5 +9,7 @@ namespace WebBaseBootstrap.Controllers
     public class BaseController : Controller
     {
         public const string Index = "Index";
+
+
     }
 }
