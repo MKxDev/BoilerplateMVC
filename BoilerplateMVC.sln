@@ -21,8 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{744B94
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{EE96DD00-4671-488E-A0C2-9C237375E0FF}"
 	ProjectSection(SolutionItems) = preProject
-		Data\BoilerplaceMVC.sl3 = Data\BoilerplaceMVC.sl3
-		Data\Northwind.sl3 = Data\Northwind.sl3
+		Data\BoilerplateMVC.db3 = Data\BoilerplateMVC.db3
 	EndProjectSection
 EndProject
 Global

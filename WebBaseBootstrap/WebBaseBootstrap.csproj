@@ -158,6 +158,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Assets\img\glyphicons-halflings-white.png" />
     <Content Include="Assets\img\glyphicons-halflings.png" />
+    <Content Include="Assets\js\jquery-1.8.3.js" />
+    <Content Include="Assets\js\Main.js" />
     <Content Include="Global.asax" />
     <Content Include="Assets\js\bootstrap.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
@@ -178,6 +180,7 @@
   <ItemGroup>
     <Folder Include="Assets\css\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Account\Partials\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -200,12 +203,6 @@
       <Project>{58e56217-e3f3-4e19-8eb2-7de375e5ac11}</Project>
       <Name>ServiceBase</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Data\Northwind.sl3">
-      <Link>App_Data\Northwind.sl3</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Config\Application.config">
@@ -338,25 +335,28 @@
     <Content Include="Assets\bootstrap\accordion.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Partial\_Navbar.cshtml" />
+    <Content Include="Views\Shared\Partials\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\less\main.less" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Data\BoilerplaceMVC.sl3">
-      <Link>App_Data\BoilerplaceMVC.sl3</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\Partials\_Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Partial\_Userbar.cshtml" />
+    <Content Include="Views\Shared\Partials\_Userbar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Data\BoilerplateMVC.db3">
+      <Link>App_Data\BoilerplateMVC.db3</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partials\_Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

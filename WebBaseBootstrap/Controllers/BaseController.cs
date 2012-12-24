@@ -8,7 +8,7 @@ namespace WebBaseBootstrap.Controllers
 {
     public class BaseController : Controller
     {
-        public const string Index = "Index";
+        public const string IndexAction = "IndexAction";
 
 
     }

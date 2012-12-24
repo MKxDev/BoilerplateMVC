@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WebBaseBootstrap.Views
+﻿namespace WebBaseBootstrap.Views
 {
     public static class ViewNames
     {
@@ -11,7 +6,10 @@ namespace WebBaseBootstrap.Views
         public const string Index = "Index";
         
         // Common partials
-        public const string NavbarPartial = "Partial/_Navbar";
-        public const string UserbarPartial = "Partial/_Userbar";
+        public const string NavbarPartial = "Partials/_Navbar";
+        public const string UserbarPartial = "Partials/_Userbar";
+
+        public const string LoginPartial = "Partials/_Login";
+        public const string RegisterPartial = "Partials/_Register";
     }
 }

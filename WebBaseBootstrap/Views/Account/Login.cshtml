@@ -1,79 +1,9 @@
-﻿@using WebBaseBootstrap.Controllers;
-
-<div class="row-fluid">
+﻿<div class="row-fluid">
     <div class="span6 well">
-        <h3>Login</h3>
-
-        @using (Html.BeginForm(AccountController.LoginAction, AccountController.Name, FormMethod.Post, new { @class = "form-horizontal" }))
-        {   
-            <div class="control-group">
-                @Html.Label("Enail", new { @class = "control-label" })
-
-                <div class="controls">
-                    @Html.TextBox("Email", null, new { placeholder = "Email" })
-                </div>
-            </div>
-            
-            <div class="control-group">
-                @Html.Label("Password", new { @class = "control-label" })
-                <div class="controls">
-                    @Html.Password("Password", null, new { placeholder = "Password" })
-                </div>
-            </div>
-
-            <div class="control-group">
-                <div class="controls">
-                    <label class="checkbox">
-                        <input type="checkbox" name="RememberMe" /> Remember Me
-                    </label>
-                    
-                    <button type="submit" class="btn">Login</button>
-                </div>
-            </div>
-        }
+        @{ Html.RenderPartial(ViewNames.LoginPartial); }
     </div>
 
     <div class="span6 well">
-        <h3>Register</h3>
-        @using (Html.BeginForm(AccountController.RegisterAction, AccountController.Name, FormMethod.Post, new { @class = "form-horizontal" }))
-        {
-            <div class="control-group">
-                @Html.Label("Enail", new { @class = "control-label" })
-                
-                <div class="controls">
-                    @Html.TextBox("Email", null, new { placeholder = "Email" })
-                </div>
-            </div>
-            
-            <div class="control-group">
-                @Html.Label("Enail Again", new { @class = "control-label" })
-                
-                <div class="controls">
-                    @Html.TextBox("Email2", null, new { placeholder = "Email Again" })
-                </div>
-            </div>
-            
-            <div class="control-group">
-                @Html.Label("Password", new { @class = "control-label" })
-                
-                <div class="controls">
-                    @Html.Password("Password", null, new { placeholder = "Password" })
-                </div>
-            </div>
-            
-            <div class="control-group">
-                @Html.Label("Password Again", new { @class = "control-label" }) 
-                
-                <div class="controls">
-                    @Html.Password("Password2", null, new { placeholder = "Password Again" })
-                </div>
-            </div>
-            
-            <div class="control-group">
-                <div class="controls">
-                    <button type="submit" class="btn">Register</button>
-                </div>
-            </div>
-        }
+        @{ Html.RenderPartial(ViewNames.RegisterPartial); }
     </div>
 </div>

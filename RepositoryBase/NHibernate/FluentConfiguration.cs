@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using System;
+using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using FluentNHibernate.Cfg;
@@ -13,8 +14,7 @@ namespace RepositoryBase.NHibernate
     {
         public static ISessionFactory CreateSessionFactory()
         {
-            var config = GetPgConfig();
-            //var config = GetSqliteConfig();
+            var config = GetSqliteConfig();
 
             var sessionFactory = config.BuildSessionFactory();
 
@@ -28,19 +28,16 @@ namespace RepositoryBase.NHibernate
 
         public static Configuration GetSqliteConfig()
         {
+            var dbPath = AppDomain.CurrentDomain.BaseDirectory +
+                         @"bin\App_Data\BoilerplateMVC.db3";
+
             var config = Fluently.Configure()
                 .Database(SQLiteConfiguration
-                    .Standard
-                    .ConnectionString(c => c.FromAppSetting("boilerplaceSqliteConnectionString")))
+                .Standard
+                .UsingFile(dbPath))
                 .Mappings(m =>
-                {
-                    m.FluentMappings.AddFromAssemblyOf<BaseModelMap<BaseModel>>();
-                })
-                .ExposeConfiguration(cfg =>
-                {
-                    cfg.SetProperty("current_session_context_class", "call");
-                    cfg.SetProperty("connection.release_mode", "on_close");
-                })
+                    m.FluentMappings.AddFromAssemblyOf<BaseModelMap<BaseModel>>()
+                )
                 .BuildConfiguration();
 
             return config;

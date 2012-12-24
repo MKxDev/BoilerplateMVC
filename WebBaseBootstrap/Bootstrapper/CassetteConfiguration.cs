@@ -21,7 +21,12 @@ namespace WebBaseBootstrap
             bundles.Add<StylesheetBundle>("Assets/less");
             bundles.Add<StylesheetBundle>("Assets/bootstrap/bootstrap.less");
             bundles.Add<StylesheetBundle>("Assets/bootstrap/responsive.less");
-            bundles.AddPerSubDirectory<ScriptBundle>("Assets/js");
+
+            bundles.Add<ScriptBundle>("Assets/js/jquery-1.8.3.js");
+            bundles.Add<ScriptBundle>("Assets/js/bootstrap.js");
+            bundles.Add<ScriptBundle>("Assets/js/main.js");
+
+            // bundles.AddPerSubDirectory<ScriptBundle>("Assets/js");
             
 
             // To combine files, try something like this instead:
