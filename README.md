@@ -1,6 +1,6 @@
-NHibernateBase
+BoilerplateMVC
 ==============
-A project that can be used as a base for any other project. The aim is to remove a lot of the boiler-plate code and setup required for every project.
+A project that can be used as a base for any ASP.NET MVC project. The aim is to remove a lot of the boiler-plate code and setup required for every project.
 
 Supports the following frameworks/concepts:
 ----------------
