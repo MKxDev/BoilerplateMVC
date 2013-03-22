@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RepositoryBase.Models;
+﻿using System.Linq;
+using DomainModels;
 
 namespace RepositoryBase.Filters
 {

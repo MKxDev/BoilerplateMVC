@@ -1,5 +1,5 @@
-﻿using FluentNHibernate.Mapping;
-using RepositoryBase.Models;
+﻿using DomainModels;
+using FluentNHibernate.Mapping;
 
 namespace RepositoryBase.NHibernate.Mappings
 {

@@ -195,6 +195,10 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DomainModels\DomainModels.csproj">
+      <Project>{7ab3b6f6-f001-40b6-a41e-54f02d9c833c}</Project>
+      <Name>DomainModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RepositoryBase\RepositoryBase.csproj">
       <Project>{f810945a-0ef1-4d0b-aaf8-ec0bc9bbee84}</Project>
       <Name>RepositoryBase</Name>

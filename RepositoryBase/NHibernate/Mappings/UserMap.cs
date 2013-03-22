@@ -1,4 +1,4 @@
-﻿using RepositoryBase.Models;
+﻿using DomainModels;
 
 namespace RepositoryBase.NHibernate.Mappings
 {

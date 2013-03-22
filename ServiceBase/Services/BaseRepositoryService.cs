@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RepositoryBase.Repositories.Interfaces;
-using RepositoryBase.Models;
+using DomainModels;
+using RepositoryContracts.Repositories;
 using ServiceBase.Services.Interfaces;
 
 namespace ServiceBase.Services

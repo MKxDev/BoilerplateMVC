@@ -1,8 +1,9 @@
 ﻿using NHibernate;
 using RepositoryBase.NHibernate;
-using StructureMap.Configuration.DSL;
-using RepositoryBase.Repositories.Interfaces;
 using RepositoryBase.Repositories;
+using RepositoryContracts.Repositories;
+using StructureMap.Configuration.DSL;
+using StructureMap.Graph;
 
 namespace ServiceBase.IoC
 {
@@ -21,9 +22,14 @@ namespace ServiceBase.IoC
                 .Use(x => x.GetInstance<ISessionFactory>().OpenSession());
 
             Scan(x =>
-            {
-                x.AddAllTypesOf<IBaseRepository>();
-            });
+                {
+                    x.TheCallingAssembly();
+
+                    x.AddAllTypesOf<IBaseRepository>();
+                    x.AddAllTypesOf<BaseRepository>();
+
+                    x.WithDefaultConventions();
+                });
         }
     }
 }

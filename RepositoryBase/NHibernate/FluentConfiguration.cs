@@ -1,11 +1,11 @@
 ﻿using System;
+using DomainModels;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using RepositoryBase.NHibernate.Mappings;
-using RepositoryBase.Models;
 
 
 namespace RepositoryBase.NHibernate

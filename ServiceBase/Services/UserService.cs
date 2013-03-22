@@ -1,16 +1,16 @@
 ﻿using System;
-using RepositoryBase.Repositories;
-using RepositoryBase.Models;
+using DomainModels;
+using RepositoryContracts.Repositories;
 using ServiceBase.Common.Exceptions;
 
 namespace ServiceBase.Services
 {
     public class UserService : BaseRepositoryService
     {
-        private UserRepository _userRepository;
+        private IUserRepository _userRepository;
         private EncryptionService _encryptionService;
 
-        public UserService(UserRepository userRepository, EncryptionService encryptionService)
+        public UserService(IUserRepository userRepository, EncryptionService encryptionService)
             : base(userRepository)
         {
             _userRepository = userRepository;
