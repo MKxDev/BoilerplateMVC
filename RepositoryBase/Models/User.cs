@@ -1,4 +1,4 @@
-﻿namespace DomainModels
+﻿namespace RepositoryBase.Models
 {
     public class User : BaseModel
     {

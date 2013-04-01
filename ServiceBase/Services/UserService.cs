@@ -1,14 +1,15 @@
 ﻿using System;
-using DomainModels;
-using RepositoryContracts.Repositories;
+using RepositoryBase.Models;
+using RepositoryBase.Repositories.Interfaces;
 using ServiceBase.Common.Exceptions;
+using ServiceBase.Services.Interfaces;
 
 namespace ServiceBase.Services
 {
-    public class UserService : BaseRepositoryService
+    public class UserService : BaseRepositoryService, IUserService
     {
-        private IUserRepository _userRepository;
-        private EncryptionService _encryptionService;
+        private readonly IUserRepository _userRepository;
+        private readonly IEncryptionService _encryptionService;
 
         public UserService(IUserRepository userRepository, EncryptionService encryptionService)
             : base(userRepository)
@@ -36,7 +37,7 @@ namespace ServiceBase.Services
                 Hash = _encryptionService.GenerateHash(password + salt),
             };
 
-            _repository.Save(user);
+            Repository.Save(user);
 
             return user;
         }

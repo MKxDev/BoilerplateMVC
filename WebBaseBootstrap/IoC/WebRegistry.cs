@@ -1,7 +1,9 @@
 ﻿using System.Web.Mvc;
+using ServiceBase.Services;
 using StructureMap;
 using StructureMap.Configuration.DSL;
 using WebBaseBootstrap.Services.Interfaces;
+using ServiceBase.Services.Interfaces;
 
 namespace WebBaseBootstrap.IoC
 {
@@ -11,7 +13,9 @@ namespace WebBaseBootstrap.IoC
         {
             Scan(x =>
             {
-                x.AddAllTypesOf<IBaseWebService>();
+                x.AssemblyContainingType<IBaseRepositoryService>();
+
+                x.AssemblyContainingType<IBaseWebService>();
             });
 
             ObjectFactory.Initialize(x =>

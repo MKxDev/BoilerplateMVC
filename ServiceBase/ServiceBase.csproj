@@ -73,6 +73,8 @@
     <Compile Include="Services\BaseRepositoryService.cs" />
     <Compile Include="Services\EncryptionService.cs" />
     <Compile Include="Services\Interfaces\IBaseRepositoryService.cs" />
+    <Compile Include="Services\Interfaces\IEncryptionService.cs" />
+    <Compile Include="Services\Interfaces\IUserService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,17 +85,9 @@
     <Content Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DomainModels\DomainModels.csproj">
-      <Project>{7ab3b6f6-f001-40b6-a41e-54f02d9c833c}</Project>
-      <Name>DomainModels</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RepositoryBase\RepositoryBase.csproj">
       <Project>{f810945a-0ef1-4d0b-aaf8-ec0bc9bbee84}</Project>
       <Name>RepositoryBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RepositoryContracts\RepositoryContracts.csproj">
-      <Project>{b2f65401-a977-4b13-b716-8ee5c16bc954}</Project>
-      <Name>RepositoryContracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

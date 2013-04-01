@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Security.Cryptography;
+using ServiceBase.Services.Interfaces;
 
 namespace ServiceBase.Services
 {
-    public class EncryptionService
+    public class EncryptionService : IEncryptionService
     {
         public string GenerateSalt(int size = 10)
         {

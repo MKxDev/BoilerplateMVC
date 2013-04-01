@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using DomainModels;
 using NHibernate;
 using NHibernate.Linq;
 using RepositoryBase.Filters;
-using RepositoryContracts.Repositories;
+using RepositoryBase.Models;
+using RepositoryBase.Repositories.Interfaces;
 
 namespace RepositoryBase.Repositories
 {

@@ -1,27 +1,27 @@
 ﻿using System;
-using DomainModels;
-using RepositoryContracts.Repositories;
+using RepositoryBase.Models;
+using RepositoryBase.Repositories.Interfaces;
 using ServiceBase.Services.Interfaces;
 
 namespace ServiceBase.Services
 {
     public abstract class BaseRepositoryService : IBaseRepositoryService
     {
-        protected IBaseRepository _repository;
+        protected IBaseRepository Repository { get; private set; }
 
-        public BaseRepositoryService(IBaseRepository repository)
+        protected BaseRepositoryService(IBaseRepository repository)
         {
-            _repository = repository;
+            Repository = repository;
         }
 
         public virtual void Save<T>(T model) where T : BaseModel
         {
-            _repository.Save(model);
+            Repository.Save(model);
         }
 
         public virtual T GetById<T>(Guid id) where T : BaseModel
         {
-            return _repository.GetById<T>(id);
+            return Repository.GetById<T>(id);
         }
     }
 }

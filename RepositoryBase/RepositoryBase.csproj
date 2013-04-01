@@ -65,11 +65,15 @@
   <ItemGroup>
     <Compile Include="Filters\BaseFilters.cs" />
     <Compile Include="Filters\UserFilter.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="NHibernate\FluentConfiguration.cs" />
     <Compile Include="NHibernate\Mappings\BaseModelMap.cs" />
     <Compile Include="NHibernate\Mappings\UserMap.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Interfaces\IBaseRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IUserRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,16 +82,6 @@
   <ItemGroup>
     <Content Include="x64\SQLite.Interop.dll" />
     <Content Include="x86\SQLite.Interop.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DomainModels\DomainModels.csproj">
-      <Project>{7ab3b6f6-f001-40b6-a41e-54f02d9c833c}</Project>
-      <Name>DomainModels</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RepositoryContracts\RepositoryContracts.csproj">
-      <Project>{b2f65401-a977-4b13-b716-8ee5c16bc954}</Project>
-      <Name>RepositoryContracts</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

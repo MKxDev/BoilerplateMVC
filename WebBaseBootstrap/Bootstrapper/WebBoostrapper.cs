@@ -18,6 +18,9 @@ namespace WebBaseBootstrap.Bootstrapper
                 x.AddRegistry(new ServiceRegistry());
                 x.AddRegistry(new WebRegistry());
             });
+
+            var registrations = ObjectFactory.WhatDoIHave();
+            System.Diagnostics.Debug.WriteLine(registrations);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using DomainModels;
+using RepositoryBase.Models;
 
 namespace RepositoryBase.Filters
 {

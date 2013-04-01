@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DomainModels
+namespace RepositoryBase.Models
 {
     public abstract class BaseModel
     {

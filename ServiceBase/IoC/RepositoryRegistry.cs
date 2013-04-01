@@ -1,7 +1,7 @@
 ﻿using NHibernate;
 using RepositoryBase.NHibernate;
 using RepositoryBase.Repositories;
-using RepositoryContracts.Repositories;
+using RepositoryBase.Repositories.Interfaces;
 using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
 
@@ -21,12 +21,12 @@ namespace ServiceBase.IoC
                 .HybridHttpOrThreadLocalScoped()
                 .Use(x => x.GetInstance<ISessionFactory>().OpenSession());
 
+            For<IBaseRepository>()
+                .HybridHttpOrThreadLocalScoped();
+
             Scan(x =>
                 {
-                    x.TheCallingAssembly();
-
                     x.AddAllTypesOf<IBaseRepository>();
-                    x.AddAllTypesOf<BaseRepository>();
 
                     x.WithDefaultConventions();
                 });

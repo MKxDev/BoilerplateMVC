@@ -1,7 +1,7 @@
 ﻿using System;
-using DomainModels;
+using RepositoryBase.Models;
 
-namespace RepositoryContracts.Repositories
+namespace RepositoryBase.Repositories.Interfaces
 {
     public interface IBaseRepository
     {

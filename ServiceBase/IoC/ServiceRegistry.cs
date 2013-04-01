@@ -7,7 +7,13 @@ namespace ServiceBase.IoC
     {
         public ServiceRegistry()
         {
-            Scan(x => x.AddAllTypesOf<IBaseRepositoryService>());
+            For<IBaseRepositoryService>()
+                .HybridHttpOrThreadLocalScoped();
+
+            Scan(x =>
+                {
+                    x.AssemblyContainingType<IBaseRepositoryService>();
+                });
         }
     }
 }
