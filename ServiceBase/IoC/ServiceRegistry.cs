@@ -1,5 +1,6 @@
-﻿using StructureMap.Configuration.DSL;
+﻿using ServiceBase.Services;
 using ServiceBase.Services.Interfaces;
+using StructureMap.Configuration.DSL;
 
 namespace ServiceBase.IoC
 {
@@ -10,9 +11,13 @@ namespace ServiceBase.IoC
             For<IBaseRepositoryService>()
                 .HybridHttpOrThreadLocalScoped();
 
+            For<BaseRepositoryService>()
+                .HybridHttpOrThreadLocalScoped();
+
             Scan(x =>
                 {
-                    x.AssemblyContainingType<IBaseRepositoryService>();
+                    x.AssemblyContainingType<BaseRepositoryService>();
+                    x.WithDefaultConventions();
                 });
         }
     }

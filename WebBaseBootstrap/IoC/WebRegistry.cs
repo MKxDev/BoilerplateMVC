@@ -13,8 +13,6 @@ namespace WebBaseBootstrap.IoC
         {
             Scan(x =>
             {
-                x.AssemblyContainingType<IBaseRepositoryService>();
-
                 x.AssemblyContainingType<IBaseWebService>();
             });
 

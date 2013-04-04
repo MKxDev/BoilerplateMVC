@@ -21,13 +21,15 @@ namespace ServiceBase.IoC
                 .HybridHttpOrThreadLocalScoped()
                 .Use(x => x.GetInstance<ISessionFactory>().OpenSession());
 
+            For<BaseRepository>()
+                .HybridHttpOrThreadLocalScoped();
+
             For<IBaseRepository>()
                 .HybridHttpOrThreadLocalScoped();
 
             Scan(x =>
                 {
-                    x.AddAllTypesOf<IBaseRepository>();
-
+                    x.AssemblyContainingType<BaseRepository>();
                     x.WithDefaultConventions();
                 });
         }
